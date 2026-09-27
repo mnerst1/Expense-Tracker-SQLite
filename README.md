@@ -2,6 +2,9 @@
 
 A lightweight command-line expense tracker built with **Python and SQLite**.
 
+<img width="700" alt="{C87219B1-3AA7-4FD8-9868-FA25B452B5A2}" src="https://github.com/user-attachments/assets/d0751f53-409b-40fa-8b92-ae0f7c3a8b48" />
+
+
 This project was created as **Day 006** of my **365 Days of Code** challenge.
 
 ---
