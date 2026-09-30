@@ -1,4 +1,5 @@
 from datetime import datetime
+from math import isfinite
 
 from database import (
     create_database,
@@ -123,10 +124,10 @@ def input_amount():
 
             amount = float(value)
 
-            if amount <= 0:
+            if not isfinite(amount) or amount <= 0:
 
                 print(
-                    "Amount must be greater than 0."
+                    "Amount must be finite and greater than 0."
                 )
 
                 continue
@@ -163,12 +164,12 @@ def input_date():
         try:
 
             # Проверяем, существует ли такая дата.
-            datetime.strptime(
+            parsed_date = datetime.strptime(
                 value,
                 "%Y-%m-%d"
             )
 
-            return value
+            return parsed_date.strftime("%Y-%m-%d")
 
         except ValueError:
 

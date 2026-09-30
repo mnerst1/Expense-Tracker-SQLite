@@ -1,4 +1,5 @@
 import sqlite3
+from math import isfinite
 
 
 # Название файла нашей базы данных.
@@ -60,6 +61,9 @@ def add_expense(
     """
     Добавляет новый расход.
     """
+
+    if not isfinite(amount) or amount <= 0:
+        raise ValueError("Amount must be finite and greater than 0.")
 
     connection = get_connection()
 
